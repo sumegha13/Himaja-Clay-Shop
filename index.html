@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Himaja's Little Clay Shop</title>
+
+    <style>
+
+        /* =========================
+           BASIC STYLE
+        ========================= */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff8f3;
+            color: #4d4141;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background-color: #ffdce5;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #7a4b5c;
+            font-size: 38px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        .flower {
+            font-size: 40px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            color: #7a4b5c;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #d66b8a;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #7a4b5c;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        .welcome {
+            text-align: center;
+        }
+
+        .welcome p {
+            max-width: 650px;
+            margin: 12px auto;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 18px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            /* Makes all content inside each card
+               line up consistently */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            background-color: #f5eeee;
+        }
+
+        .product h3 {
+            color: #7a4b5c;
+            margin: 15px 0 8px;
+
+            /* Keeps product titles at the same height */
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product p {
+            line-height: 1.5;
+            margin: 0;
+
+            /* Keeps descriptions at the same height */
+            min-height: 72px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d66b8a;
+
+            /* Pushes all prices to the same bottom position */
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+
+        /* =========================
+           ORDER BUTTON
+        ========================= */
+
+        .order-area {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .order-button {
+            display: inline-block;
+            padding: 14px 25px;
+            background-color: #d66b8a;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .order-button:hover {
+            background-color: #b95270;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background-color: #fff0f4;
+            border-radius: 20px;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .about p {
+            max-width: 650px;
+            margin: 12px auto;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           HOW TO ORDER
+        ========================= */
+
+        .order-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .order-box p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #ffdce5;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 6px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 35px 15px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="flower">🌸</div>
+
+        <h1>Himaja's Little Clay Shop</h1>
+
+        <p>
+            Handmade with clay, creativity & lots of love 💕
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#shop">My Creations</a>
+
+        <a href="#about">About Me</a>
+
+        <a href="#order">How to Order</a>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section id="home" class="welcome">
+
+        <div class="flower">🩷</div>
+
+        <h2>Welcome!</h2>
+
+        <p>
+            Hi! I'm Himaja 👋
+        </p>
+
+        <p>
+            I am 9 years old and I love making little
+            things with clay.
+        </p>
+
+        <p>
+            I enjoy choosing colours, trying new ideas
+            and making things with my own hands.
+        </p>
+
+        <p>
+            Have a look at my little creations! 🌷
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SHOP
+    ========================= -->
+
+    <section id="shop">
+
+        <h2>🎨 My Creations</h2>
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <img src="images/product1.jpg"
+                     alt="Clay Ice Creams">
+
+                <h3>🍦 Clay Ice Creams</h3>
+
+                <p>
+                    Little handmade ice creams
+                    made with colourful clay.
+                </p>
+
+                <div class="price">
+                    €1
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <img src="images/product2.jpg"
+                     alt="Clay Little Panda">
+
+                <h3>🐼 Clay Little Panda</h3>
+
+                <p>
+                    A cute little panda
+                    made by me.
+                </p>
+
+                <div class="price">
+                    €1
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <img src="images/product3.jpg"
+                     alt="Clay Peg Board Charms">
+
+                <h3>✨ Clay Peg Board Charms</h3>
+
+                <p>
+                    Cute peg board charms
+                    made with clay for decoration.
+                </p>
+
+                <div class="price">
+                    €1
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <img src="images/product4.jpg"
+                     alt="Fridge Magnets">
+
+                <h3>🧲 Fridge Magnets</h3>
+
+                <p>
+                    Cute little fridge magnets
+                    for decoration.
+                </p>
+
+                <div class="price">
+                    €1
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ONE EMAIL BUTTON FOR THE WHOLE SHOP -->
+
+        <div class="order-area">
+
+            <a class="order-button"
+               href="mailto:teeny.footprints@gmail.com?subject=Himaja's%20Clay%20Shop%20Order">
+
+                📧 Order by Email
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT HIMAJA
+    ========================= -->
+
+    <section id="about">
+
+        <div class="about">
+
+            <h2>💕 About Me</h2>
+
+            <p>
+                Hi! My name is Himaja.
+            </p>
+
+            <p>
+                I am 9 years old and I love making
+                things with my hands.
+            </p>
+
+            <p>
+                Clay is one of my favourite things
+                to create with.
+            </p>
+
+            <p>
+                I love choosing colours, trying new ideas
+                and turning a little piece of clay into
+                something new.
+            </p>
+
+            <p>
+                Every creation is made by me and is a
+                little piece of my imagination. ✨
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOW TO ORDER
+    ========================= -->
+
+    <section id="order">
+
+        <h2>🛍️ How to Order</h2>
+
+        <div class="order-box">
+
+            <p>
+                See something you like? 😊
+            </p>
+
+            <p>
+                Click the
+                <strong>"Order by Email"</strong>
+                button above.
+            </p>
+
+            <p>
+                Please tell us which creation you would
+                like and how many you want.
+            </p>
+
+            <p>
+                Each creation costs only <strong>€1</strong>.
+            </p>
+
+            <p>
+                A parent will help with the order,
+                payment and delivery or pick-up details.
+            </p>
+
+            <p>
+                Thank you for supporting my little
+                creations! 💕
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            🌸 Made with creativity by Himaja 🌸
+        </p>
+
+        <p>
+            © 2026 Himaja's Little Clay Shop
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
